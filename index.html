@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Kub | Formations Professionnelles</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --violet: #8B5CF6;
+            --bleu: #3B82F6;
+            --blanc: #FFFFFF;
+            --marron: #92400E;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+        }
+
+        .btn-marron {
+            background-color: #92400E;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-marron:hover {
+            background-color: #78340F;
+            transform: translateY(-2px);
+        }
+
+        .nav-active {
+            border-bottom: 3px solid var(--violet);
+            color: var(--violet);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img src="img/logo.png" alt="G-Kub Logo" class="h-12 w-auto">
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex space-x-8 flex-1 justify-center">
+                    <button onclick="navigateTo('accueil')" class="nav-link px-3 py-2 text-gray-800 font-semibold hover:text-violet-600 transition">Accueil</button>
+                    <button onclick="navigateTo('formations')" class="nav-link px-3 py-2 text-gray-800 font-semibold hover:text-violet-600 transition">Formations</button>
+                    <button onclick="navigateTo('apropos')" class="nav-link px-3 py-2 text-gray-800 font-semibold hover:text-violet-600 transition">À propos</button>
+                    <button onclick="navigateTo('contact')" class="nav-link px-3 py-2 text-gray-800 font-semibold hover:text-violet-600 transition">Contact</button>
+                </div>
+
+                <!-- Call & WhatsApp Buttons -->
+                <div class="flex space-x-3">
+                    <a href="tel:+1234567890" class="btn-marron px-4 py-2 rounded-lg text-sm font-semibold flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.058.3.102.605.142.91.08.554.113 1.plaintext.113 1.plaintext a10 10 0 003.034 6.964 10 10 0 006.964 3.034c.577 0 1.153-.035 1.728-.113.306-.04.611-.084.91-.142l.774 1.548a1 1 0 011.06.54l.435.74a1 1 0 01-.836.986H16a10 10 0 01-9.5-6.5A10 10 0 012 3z"></path></svg>
+                        <span>Appel</span>
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="btn-marron px-4 py-2 rounded-lg text-sm font-semibold flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.428.735 4.79 2.114 6.77L2.885 23.126l7.02-1.84a9.844 9.844 0 004.716 1.204h.005c5.408 0 9.887-4.48 9.887-10.006 0-2.668-.975-5.186-2.75-7.151-1.776-1.947-4.269-3.027-6.872-3.027z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Accueil Page -->
+        <div id="accueil-page" class="page-content">
+            <section class="gradient-bg text-white py-20 md:py-32">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                                Transformez Votre Carrière
+                            </h1>
+                            <p class="text-xl text-gray-100">
+                                Accédez à des formations professionnelles de qualité supérieure en seulement 3 mois. Rejoignez des centaines d'apprenants qui ont changé leur vie.
+                            </p>
+                            <div class="flex space-x-4 pt-6">
+                                <button onclick="navigateTo('formations')" class="bg-white text-violet-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition transform hover:scale-105">
+                                    Découvrir les Formations
+                                </button>
+                                <button onclick="navigateTo('contact')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-violet-600 transition">
+                                    Nous Contacter
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="img/bg.jpg" alt="Formation" class="rounded-lg shadow-2xl object-cover w-full h-96">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proposition de Valeur -->
+            <section class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Pourquoi Choisir G-Kub?</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-shadow p-8 rounded-lg text-center hover:shadow-xl transition">
+                            <div class="w-16 h-16 bg-violet-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Formation Rapide</h3>
+                            <p class="text-gray-600">Complétez votre formation en seulement 3 mois avec un programme intensif et structuré.</p>
+                        </div>
+                        <div class="card-shadow p-8 rounded-lg text-center hover:shadow-xl transition">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.5 1.5H3.75A2.25 2.25 0 001.5 3.75v12.5A2.25 2.25 0 003.75 18.5h12.5a2.25 2.25 0 002.25-2.25V9.5"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Expert Formateur</h3>
+                            <p class="text-gray-600">Apprenez auprès d'un maître formateur avec une expérience solide et une passion pédagogique.</p>
+                        </div>
+                        <div class="card-shadow p-8 rounded-lg text-center hover:shadow-xl transition">
+                            <div class="w-16 h-16 bg-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800">Résultats Garantis</h3>
+                            <p class="text-gray-600">Obtenez des compétences pratiques et immédiatement applicables dans le monde professionnel.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Formations Page -->
+        <div id="formations-page" class="page-content hidden">
+            <section class="py-12 md:py-20 bg-gray-100">
+                <div class="container mx-auto px-4">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Nos Formations</h1>
+                    <p class="text-xl text-gray-600 mb-12 max-w-3xl">
+                        Découvrez nos formations professionnelles segmentées par niveau et thématique. Chaque formation est conçue pour vous transmettre des compétences concrètes et immédiatement applicables.
+                    </p>
+
+                    <!-- Formations Grid -->
+                    <div class="grid md:grid-cols-3 gap-8 mb-16">
+                        <div class="formation-card cursor-pointer card-shadow rounded-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105" onclick="showFormationDetail('fitness')">
+                            <img src="docs/fitness.jpg" alt="Fitness" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">Fitness & Bien-être</h3>
+                                <p class="text-gray-600 mb-4">Maîtrisez les techniques modernes de fitness et bien-être en 3 mois.</p>
+                                <button class="btn-marron w-full py-2 rounded font-bold">Voir Détails</button>
+                            </div>
+                        </div>
+
+                        <div class="formation-card cursor-pointer card-shadow rounded-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105" onclick="showFormationDetail('digital')">
+                            <img src="docs/img.png" alt="Digital" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">Marketing Digital</h3>
+                                <p class="text-gray-600 mb-4">Apprenez les stratégies modernes du marketing digital et de la gestion de contenu.</p>
+                                <button class="btn-marron w-full py-2 rounded font-bold">Voir Détails</button>
+                            </div>
+                        </div>
+
+                        <div class="formation-card cursor-pointer card-shadow rounded-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105" onclick="showFormationDetail('management')">
+                            <img src="docs/mgm.png" alt="Management" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">Management & Leadership</h3>
+                                <p class="text-gray-600 mb-4">Développez vos compétences en leadership et gestion d'équipe.</p>
+                                <button class="btn-marron w-full py-2 rounded font-bold">Voir Détails</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formation Detail Modal -->
+                    <div id="formation-detail" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+                        <div class="bg-white rounded-lg max-w-3xl w-full max-h-96 overflow-y-auto">
+                            <div class="p-8">
+                                <button onclick="closeFormationDetail()" class="float-right text-gray-600 hover:text-gray-800 text-2xl">&times;</button>
+                                <img id="detail-image" src="" alt="Formation" class="w-full h-64 object-cover rounded-lg mb-6">
+                                <h2 id="detail-title" class="text-3xl font-bold mb-4"></h2>
+                                <p id="detail-desc" class="text-gray-600 text-lg"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire d'inscription -->
+                    <section class="bg-white p-8 rounded-lg card-shadow">
+                        <h2 class="text-3xl font-bold mb-8 text-gray-800">S'inscrire à une Formation</h2>
+                        <form id="formation-form" class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Prénom *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-violet-600">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Nom *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-violet-600">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Adresse *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-violet-600">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">E-mail *</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-violet-600">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 font-semibold mb-2">Formation choisie *</label>
+                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-violet-600">
+                                    <option>Sélectionnez une formation</option>
+                                    <option>Fitness & Bien-être</option>
+                                    <option>Marketing Digital</option>
+                                    <option>Management & Leadership</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <button type="submit" class="btn-marron w-full py-3 rounded-lg font-bold text-white">
+                                    S'inscrire Maintenant
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </section>
+        </div>
+
+        <!-- À Propos Page -->
+        <div id="apropos-page" class="page-content hidden">
+            <section class="py-12 md:py-20 bg-gray-100">
+                <div class="container mx-auto px-4">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-gray-800 text-center">À Propos</h1>
+
+                    <!-- Bio Section -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center mb-16 bg-white p-8 rounded-lg card-shadow">
+                        <div class="order-2 md:order-1">
+                            <h2 class="text-3xl font-bold mb-6 text-gray-800">Votre Maître Formateur</h2>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                                Bienvenue! Je suis votre maître formateur chez G-Kub, avec plusieurs années d'expérience dans le domaine de la formation professionnelle.
+                            </p>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                                Ma passion est de transmettre des savoir-faire concrets et applicables. À travers nos formations intensives de 3 mois, je vous accompagne vers une transformation professionnelle réelle.
+                            </p>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                Chaque apprenant est important à mes yeux, et je m'engage à vous fournir un apprentissage personnalisé et de qualité supérieure.
+                            </p>
+                        </div>
+                        <div class="order-1 md:order-2">
+                            <img src="img/MG.png" alt="Maître Formateur" class="rounded-lg shadow-2xl object-cover w-full h-96">
+                        </div>
+                    </div>
+
+                    <!-- Hobbies Section -->
+                    <div class="bg-gradient-to-r from-violet-600 to-blue-600 text-white p-12 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-6">Mes Passions Hors Salle</h3>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div class="text-5xl mb-4">🎨</div>
+                                <p class="text-lg">Passion pour les Mangas</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl mb-4">🎵</div>
+                                <p class="text-lg">Mélomane Passionné</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl mb-4">📚</div>
+                                <p class="text-lg">Lecteur de Livres</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page-content hidden">
+            <section class="py-12 md:py-20 bg-gray-100">
+                <div class="container mx-auto px-4">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-gray-800 text-center">Nous Contacter</h1>
+
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <!-- Contact Info Cards -->
+                        <div class="bg-white p-8 rounded-lg card-shadow text-center">
+                            <div class="w-16 h-16 bg-violet-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.058.3.102.605.142.91.08.554.113 1.plaintext.113 1.plaintext a10 10 0 003.034 6.964 10 10 0 006.964 3.034c.577 0 1.153-.035 1.728-.113.306-.04.611-.084.91-.142l.774 1.548a1 1 0 011.06.54l.435.74a1 1 0 01-.836.986H16a10 10 0 01-9.5-6.5A10 10 0 012 3z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Téléphone</h3>
+                            <p class="text-gray-600">+1 234 567 890</p>
+                            <p class="text-gray-600">+1 987 654 321</p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-lg card-shadow text-center">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Email</h3>
+                            <p class="text-gray-600">contact@gkub.com</p>
+                            <p class="text-gray-600">info@gkub.com</p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-lg card-shadow text-center">
+                            <div class="w-16 h-16 bg-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Adresse</h3>
+                            <p class="text-gray-600">123 Rue de la Formation</p>
+                            <p class="text-gray-600">75000 Ville, Pays</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 md:p-12 rounded-lg card-shadow max-w-2xl mx-auto">
+                        <h2 class="text-3xl font-bold mb-8 text-gray-800">Formulaire de Contact</h2>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Nom Complet *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 transition">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">E-mail *</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 transition">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Téléphone *</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 transition">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Sujet *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 transition">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Message *</label>
+                                <textarea required rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 transition resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="btn-marron w-full py-3 rounded-lg font-bold text-white hover:shadow-lg transition">
+                                Envoyer le Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 md:py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">À Propos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" onclick="navigateTo('apropos')" class="hover:text-white transition">Qui sommes-nous?</a></li>
+                        <li><a href="#" onclick="navigateTo('formations')" class="hover:text-white transition">Nos formations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Formation</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Fitness & Bien-être</a></li>
+                        <li><a href="#" class="hover:text-white transition">Marketing Digital</a></li>
+                        <li><a href="#" class="hover:text-white transition">Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Ressources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">Support</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Nous Suivre</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-violet-600 p-2 rounded-full hover:bg-violet-700 transition">f</a>
+                        <a href="#" class="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">𝕏</a>
+                        <a href="#" class="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-400">
+                    &copy; 2026 G-Kub. Tous droits réservés. | 
+                    <a href="#" class="hover:text-white transition">Politique de confidentialité</a> | 
+                    <a href="#" class="hover:text-white transition">Conditions d'utilisation</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
