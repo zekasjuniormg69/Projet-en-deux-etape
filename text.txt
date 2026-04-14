@@ -1,0 +1,21 @@
+Je veux que tu me créer un site nommé "G-Kub". 
+comment ça doit marcher, j'aurais besoin que la page puisse avoir : le logo à gauche, "accueil, formations, à propos, contact" au milieux et deux boutton à la droite "appel, whatsapp" 
+
+Tu te rends dans le dossier docs là-bas tu trouveras des flyers des formation que je fait, et c'est de ces flyers que tu feras le site. 
+
+Tu te rends dans le dossier img là-bas tu trouveras une photo nommé "logo" que tu utiliseras comme logo du site, une autre photo "MG" c'est avec cette photo tu utiliseras pour la page "à propos". Et le reste des image tu l'utiliseras pour la bonne conception du site. 
+
+Voici comment seras les page : 
+ Dans la page "Accueil": C'est le point de départ de la navigation. Elle doit guider intelligemment l'internaute vers les sections clés (à propos, formation, contact), C'est là que tu mettras en avant les argument majeur (Proposition de Valeur) pour convaincre les visiteur de rester plutôt que de repartir.   
+ 
+ Dans la page "Formation" : Elle doit montrer clairement quel bénéfice concret l'apprenant va retirer (une bonne formation en 3mois seulemnts), Elle doit segmenter les offre (par niveau, par thématique ou par durée) pour que l'utilisateur trouve immédiatement ce qui lui correspond. rt tu mets une liste des formations que je fais, cliquable qui ramène à l'image de la formation choisi. et vers la fin tu créer un petit formulaire qui permettra à l'utilisateur de entrer ces information comme "nom, prenom, adress, et e-mail". 
+
+ Dans la page "À propos" : Elle dois parler de ma bio comme maitre de formation, tu mettras ma photo et ma bio juste de face c'est à dire : l'image à droite et la bio à gauche sur la même ligne. en bas tu ajoute "Mes temps or salle : Je suis pationer des mangas, music, livre" et pour la photo, tu le trouveras dans le dossier "img/MG". 
+
+ Dans la page "Contact" je te laisse me faire un bon design avec formulaire d'inscription et bouton d'envoie. Mes coordonner (tél, e-mail, adress) 
+
+Tu réaliseras ce site avec java-script dans le dossier js, tailwingcss dans le dossier css pour le desing du site et gérer le responsive. 
+
+Et le design et la couleur (violet, bleu, blanc, et marron pour les bouton)  
+
+Et noublie pas le footer 
